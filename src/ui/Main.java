@@ -318,7 +318,6 @@ public class Main{
 				if(document<0){
 					System.out.println("enter a valid option.... xD"); 
 					break;
-
 				}
 
 				msj = property.totalRentalForOwner(document);

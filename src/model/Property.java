@@ -60,6 +60,12 @@ public class Property{
 			this.typePhone = TypePhone.OTHER; 
 		}
 	}
+	/**
+	 * registerBuilding: this method register a building.
+	 * @param idBuilding: String: this is the id of the building.
+	 * @param address: String: this is the  buidling addres.
+	 * @return msj: String: a confirm message.
+	 */
 	public String registerBuilding(String idBuilding, String address){
 
 		String msj = "Could not register the building"; 
@@ -90,6 +96,16 @@ public class Property{
 		}
  
 	}
+	/**
+	 * registerApartmentToBuilding: This method receives some parameters to register an apartment to a specific building.
+	 * @param idBuilding: String: this is the id of the builfing.
+	 * @param idApartment: int: is the id of the apartment.
+	 * @param numRooms: int: is the quantity of rooms.
+	 * @param numBathrooms: int is the quantity of bathrooms.
+	 * @param balcony: boolean: if have or not a balcony.
+	 * @param price: int: the price of the apartment.
+	 * @return  msj: a confirm message.
+	 */
 
 	public String registerApartmentToBuilding(String idBuilding, int idApartment, int numRooms, int numBathrooms, boolean balcony, int price){
 		String msj = ""; 
@@ -102,6 +118,12 @@ public class Property{
 		}
 		return msj; 
 	}
+
+	/**
+	 * searchBuildingById: This method compares the ids of existing buildings to see if there is already one.
+	 * @param idBuilding: String: the building id.
+	 * @return pos: a position in the array. 
+	 */
 	public int searchBuildingById(String idBuilding){
 		int pos = -1; 
 		boolean isFound = false; 
@@ -129,6 +151,18 @@ public class Property{
 		}
  
 	}
+	/**
+	 * registerOwnerToApartment: This method receives some parameters to register an owner to a specific apartment.
+	 * @param document: int: this is the id of the owner.
+	 * @param name: String: is the name of the owner.
+	 * @param cellPhone: int: is the cellphone of the owner.
+	 * @param typePhone: int is the type  of phone of the owner.
+	 * @param idBuilding: String: the building id.
+	 * @param idApartment: int: is the id of the apartment.
+	 * @param count: int the num of the bank count of the owner. 
+	 * @param bank: String: the bank name.
+	 * @return  msj: a confirm message.
+	 */
 	public String registerOwnerToApartment(int document, String name, int cellPhone, int typePhone,String idBuilding, int idApartment,int count, String bank){
 		String msj = ""; 
 		setTypePhone(typePhone); 
@@ -157,6 +191,16 @@ public class Property{
 		}
  
 	}
+	/**
+	 * registerTenantToApartment: This method receives some parameters to register an tenant to a specific apartment.
+	 * @param document: int: this is the id of the tenant.
+	 * @param name: String: is the name of the tenant.
+	 * @param cellPhone: int: is the cellphone of the tenant.
+	 * @param typePhone: int is the type  of phone of the tenant.
+	 * @param idBuilding: String: the building id.
+	 * @param idApartment: int: is the id of the apartment.
+	 * @return  msj: a confirm message.
+	 */
 	public String registerTenantToApartment(int document, String name, int cellPhone, int typePhone,String idBuilding, int idApartment){
 		String msj = ""; 
 		setTypePhone(typePhone); 
@@ -170,7 +214,11 @@ public class Property{
 		}
 		return msj; 
 	}
-
+	/**
+	 * apartmentsAvailable:this method gives us the number of apartments available in a certain building 
+	 * @param idBuilding: String: the building id.
+	 * @return msj: String: a confirm message.
+	 */
 	public String apartmentsAvailable(String idBuilding){
 
 		String msj = "this building does not exist... "; 
@@ -182,6 +230,11 @@ public class Property{
 		}
 		return msj; 
 	}
+	/**
+	 * valueByApartmentsForBuilding: the money that is received for all rented apartments in a building. 
+	 * @param idBuilding: String: the building id.
+	 * @return msj: String: a confirm message.
+	 */
 
 	public String valueByApartmentsForBuilding(String idBuilding){
 		String msj = "";
@@ -196,6 +249,12 @@ public class Property{
 		
 		return msj;
  	}
+ 	/**
+	 * avalibleApartment: say if a specific apartment is available or not . 
+	 * @param idBuilding: String: the building id.
+	 * @param idApartment: int: is the id of the apartment.
+	 * @return msj: String: a confirm message.
+	 */
 
  	public String avalibleApartment(String idBuilding, int idApartment){
 
@@ -210,6 +269,11 @@ public class Property{
 		return msj; 
 
  	}
+ 	/**
+	 * apartmentForOwner: the number of apartments a specific owner has . 
+	 * @param document: int: this is the id of the owner.
+	 * @return count: int: a int valor.
+	 */
 
  	public int apartmentForOwner(int document){
  		int count =0; 
@@ -222,6 +286,11 @@ public class Property{
 
  		return count; 
  	}
+ 	/**
+	 * totalRentalForOwner: the amount of money you receive for owner apartments in specific . 
+	 * @param document: int: this is the id of the owner.
+	 * @return msj: a message.
+	 */
 
  	public String totalRentalForOwner(int document){
  		String msj = ""; 

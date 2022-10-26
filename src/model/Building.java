@@ -92,7 +92,7 @@ public class Building{
 			// I add the apartment to the first available array space 
 			apartments[i].setTenant(tenant); 
 			isEmpty = true; 
-			msj = "New owner registed"; 
+			msj = "New tenant registed"; 
 		} else{
 			msj = "this apartment does not exist"; 
 			}

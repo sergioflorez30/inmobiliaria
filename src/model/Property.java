@@ -296,6 +296,11 @@ public class Property{
  		String msj = ""; 
  		double price =0.0; 
  		for(int i =0; i<ALL_APARTMENT; i++){
+			if(totalApartments[i].getOwner() != null){
+				System.out.println(totalApartments[i].getOwner().getDocument());
+				
+			}
+
  			if(totalApartments[i] != null && totalApartments[i].getOwner() != null && totalApartments[i].getOwner().getDocument() == document){
  				price += totalApartments[i].getPrice();
  			}
